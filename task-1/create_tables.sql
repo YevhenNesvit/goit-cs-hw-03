@@ -1,14 +1,17 @@
+DROP TABLE IF EXISTS users;
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     fullname VARCHAR(100),
     email VARCHAR(100) UNIQUE
 );
 
+DROP TABLE IF EXISTS status;
 CREATE TABLE status (
     id SERIAL PRIMARY KEY,
     name VARCHAR(50) UNIQUE CHECK (name IN ('new', 'in progress', 'completed'))
 );
 
+DROP TABLE IF EXISTS tasks;
 CREATE TABLE tasks (
     id SERIAL PRIMARY KEY,
     title VARCHAR(100),
